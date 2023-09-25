@@ -1,0 +1,36 @@
+---
+import Action from './Action.astro';
+---
+
+<div
+  class='todolist py-5'
+>
+  <h3 class="mb-4 uppercase">List of naughty things to do with babe:</h3>
+  <p class='error-info'></p>
+  <div class="collapse collapse-arrow bg-red-500">
+    <input type="radio" name="my-accordion-2" checked="checked" /> 
+    <div class="collapse-title text-xl font-medium">
+      Click to open this one and close others
+    </div>
+    <div class="collapse-content"> 
+      <li data-id='test1' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-[#f5f5f5]">
+        (.) (.)
+        <Action />
+      </li>
+    </div>
+  </div>
+  <ul class="block">
+    <li data-id='test1' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
+      (.) (.)
+      <Action />
+    </li>
+    <li data-id='test2' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
+      🍑
+      <Action />
+    </li>
+    <li data-id='test3' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
+      8=👊🏽=D💦
+      <Action />
+    </li>
+  </ul>
+</div>
