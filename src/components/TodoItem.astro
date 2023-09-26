@@ -1,0 +1,14 @@
+---
+import Action from './Action.astro';
+
+interface Props {
+    task: string;
+}
+
+const { task } = Astro.props
+---
+
+<li class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
+    {task}
+    <Action />
+</li>
