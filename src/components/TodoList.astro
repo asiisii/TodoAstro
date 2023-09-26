@@ -1,24 +1,22 @@
 ---
 import Action from './Action.astro';
+import TodoItem from './TodoItem.astro';
+
+const taskList = ['sleep', 'walk my fur babies', 'work', 'eat', 'watch some tv shows', 'study']
+
+
 ---
 
 <div
   class='todolist py-5'
 >
-  <h3 class="mb-4 uppercase">List of naughty things to do with babe:</h3>
+  <h3 class="mb-4 uppercase">List of things to do for today:</h3>
   <p class='error-info'></p>
+
   <ul class="block">
-    <li data-id='test1' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
-      (.) (.)
-      <Action />
-    </li>
-    <li data-id='test2' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
-      🍑
-      <Action />
-    </li>
-    <li data-id='test3' class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-400">
-      8=👊🏽=D💦
-      <Action />
-    </li>
+    {taskList.length > 0 
+      ? (taskList.map(task => <TodoItem task={task} />))
+      : null
+    }
   </ul>
 </div>
