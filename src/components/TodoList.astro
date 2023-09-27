@@ -3,20 +3,16 @@ import Action from './Action.astro';
 import TodoItem from './TodoItem.astro';
 
 const taskList = ['sleep', 'walk my fur babies', 'work', 'eat', 'watch some tv shows', 'study']
-
+const jsonTask = JSON.stringify(taskList)
 
 ---
 
-<div
-  class='todolist py-5'
->
+<div class='todolist py-5'>
   <h3 class="mb-4 uppercase">List of things to do for today:</h3>
   <p class='error-info'></p>
-
-  <ul class="block">
-    {taskList.length > 0 
-      ? (taskList.map(task => <TodoItem task={task} />))
-      : null
-    }
+  <ul class="block" x-data=`{ tasks: ${jsonTask}}`>
+    <template x-for="task in tasks">
+        <TodoItem />
+    </template>
   </ul>
 </div>
