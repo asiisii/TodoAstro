@@ -1,8 +1,15 @@
 ---
 import Action from './Action.astro';
+import EditForm from './EditForm.astro';
 ---
-
-<li class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none bg-gray-600" >
-    <span x-text="task"></span>
+<!-- bg-gray-600 -->
+<li 
+    class="flex justify-between items-center m-[15px] pl-[20px] text-left list-none" 
+    x-data="{ open: false, toggle() { this.open = ! this.open } }"
+    x-effect="console.log(open)"
+    :id="task.id"
+>
+    <div x-text="task.item" x-show="!open" class=`text-4xl ` :class=`task.isCompleted ? 'line-through' : ''`></div>
+    <input type="text" :value="task.item" class="text-red-500 text-4xl" x-show="open" />
     <Action />
 </li>
