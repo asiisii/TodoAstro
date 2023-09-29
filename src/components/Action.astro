@@ -2,8 +2,23 @@
 import Icon from './Icon.astro';
 ---
 
-<div class='inline-block '>
-  <button class='complete py-3.5 px-2.5 border-none bg-transparent cursor-pointer'><Icon iconName='checks' /></button>
-  <button class='edit py-3.5 px-2.5'><Icon iconName='edit' /></button>
-  <button class='delete py-3.5 px-2.5'><Icon iconName='delete' /></button>
+<div class='inline-block' x-show="!open">
+  <button class='complete py-3.5 px-2.5 border-none bg-transparent cursor-pointer'>
+    <Icon iconName='checks' />
+  </button>
+  <button class='edit py-3.5 px-2.5' @click="toggle()">
+    <Icon iconName='edit' />
+  </button>
+  <button class='delete py-3.5 px-2.5'>
+    <Icon iconName='delete' />
+  </button>
+</div>
+
+<div class='inline-block' x-show="open">
+  <button class='edit py-3.5 px-2.5' @click="toggle()" type"submit">
+      <Icon iconName='save' />
+  </button>
+  <button class='delete py-3.5 px-2.5' @click="toggle()" type="reset">
+    <Icon iconName='cancel' />
+  </button>
 </div>
