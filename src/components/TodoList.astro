@@ -2,9 +2,46 @@
 import Action from './Action.astro';
 import TodoItem from './TodoItem.astro';
 
-const taskList = ['sleep', 'walk my fur babies', 'work', 'eat', 'watch some tv shows', 'study']
-const jsonTask = JSON.stringify(taskList)
 
+const dbTasks = [
+  {
+    id: 1,
+    item: 'sleep',
+    isCompleted: true,
+    date: new Date(),
+  },
+  {
+    id: 2,
+    item: 'walk my fur babies',
+    isCompleted: false,
+    date: new Date(),
+  },
+  {
+    id: 3,
+    item: 'work',
+    isCompleted: false,
+    date: new Date(),
+  },
+  {
+    id: 4,
+    item: 'eat',
+    isCompleted: true,
+    date: new Date(),
+  },
+  {
+    id: 5,
+    item: 'watch some tv shows',
+    isCompleted: false,
+    date: new Date(),
+  },
+  {
+    id: 6,
+    item: 'study',
+    isCompleted: true,
+    date: new Date(),
+  }
+]
+const jsonTask = JSON.stringify(dbTasks)
 ---
 
 <div class='todolist py-5'>
