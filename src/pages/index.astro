@@ -6,9 +6,13 @@ import TodoList from '../components/TodoList.astro';
 ---
 
 <Layout title='Todo Astro'>
-    <div class='h-full w-full text-gray-100'>
-      <h1 class='text-[150px]'>Hiya, Ashish!</h1>
-      <h1 class='text-[30px]'>Sunday, 24 September</h1>
-      <TodoList />
-    </div>
+  <div class='h-full w-full text-gray-100' x-show="activeTab == 'home'">
+    <h1 class='text-[150px]'>Hiya, Ashish!</h1>
+    <h1 class='text-[30px]'>Sunday, 24 September</h1>
+    <TodoList />
+  </div>
+  <div class='h-full w-full text-gray-100' x-show="activeTab == 'new'">
+    <h1 class='text-[150px]'>Add New Item</h1>
+    <TodoList />
+  </div>
 </Layout>
