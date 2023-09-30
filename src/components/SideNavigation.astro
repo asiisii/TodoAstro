@@ -23,20 +23,20 @@ import Icon from './Icon.astro'
         <hr class="bg-gray-700">
 		<div class="">
 			<ul class="pt-2 pb-4 space-y-1 text-sm">
-				<li class="rounded-sm bg-gray-800"> <!-- bg-gray-800 for active-->
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+				<li class="rounded-sm" :class="activeTab == 'home' ? 'bg-gray-800' : '' "> <!-- bg-gray-800 for active-->
+					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md" @click="activeTab = 'home'" >
 						<Icon iconName='home' />
 						<span>Home</span>
 					</a>
 				</li>
-        <li class="rounded-sm">
-          <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+        <li class="rounded-sm" :class="activeTab == 'new' ? 'bg-gray-800' : '' ">
+          <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md" @click="activeTab = 'new'" >
             <Icon iconName='grid' />
             <span>Add new item</span>
           </a>
         </li>
-				<li class="rounded-sm">
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+				<li class="rounded-sm" :class="activeTab == 'favorite' ? 'bg-gray-800' : '' ">
+					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md" @click="activeTab = 'favorite'" >
             <Icon iconName='favorite' />
 						<span>Favorite</span>
 					</a>
@@ -49,14 +49,14 @@ import Icon from './Icon.astro'
     
 	<div class="flex items-center p-2 mt-12 space-x-4 justify-self-end">
         <ul>
-            <li class="rounded-sm">
-                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+            <li class="rounded-sm" :class="activeTab == 'settings' ? 'bg-gray-800' : '' ">
+                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md" @click="activeTab = 'settings'" >
                   <Icon iconName='settings' />
                     <span>Settings</span>
                 </a>
             </li>
-            <li class="rounded-sm">
-                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+            <li class="rounded-sm" :class="activeTab == 'logout' ? 'bg-gray-800' : '' ">
+                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md" @click="activeTab = 'logout'" >
                   <Icon iconName='logout' />
                     <span>Logout</span>
                 </a>
