@@ -19,5 +19,9 @@ import TodoList from '../components/TodoList.astro';
     <h1 class='text-[150px]'>Favorite Page</h1>
     <TodoList />
   </div>
- 
+  <div class='h-full w-full text-gray-100' x-show="activeTab == 'settings'">
+    <h1 class='text-[150px]'>Settings</h1>
+    <TodoList />
+  </div>
+
 </Layout>
